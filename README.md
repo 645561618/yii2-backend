@@ -1,3 +1,4 @@
+
 # 欢迎使用yii2cms后台快速搭建框架
 
 ------
@@ -12,9 +13,10 @@
 
 查看演示站点-账号：demo 密码：123456
 
+yii2后台，喜欢就点个星
+
 系统目录结构如下
-DIRECTORY STRUCTURE
--------------------
+
 
 ```
 api
@@ -71,3 +73,9 @@ yii2_cms.sql            数据库文件
  2. 把本项目克隆下来 `git clone https://github.com/changchang700/yii2cms.git`
  3. 运行 `composer install`,然后再在项目根目录运行 `php init` 进行项目初始化配置
  4. 导入数据库文件，数据库文件在yii2cms下的yii2_cms.sql，直接到如即可
+
+
+
+
+
+
