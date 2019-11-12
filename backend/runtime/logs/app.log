@@ -1,0 +1,954 @@
+2019-10-14 03:54:43 [127.0.0.1][-][tncajdm6lf2lsr6bbfh52gvd53][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: {{%admin}}' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php:438
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#4 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/User.php(109): yii\db\BaseActiveRecord::findOne(Array)
+#5 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(74): rbac\models\User::findByUsername('demo')
+#6 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(45): rbac\models\form\Login->getUser()
+#7 [internal function]: rbac\models\form\Login->validatePassword('password', NULL, Object(yii\validators\InlineValidator))
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/validators/InlineValidator.php(72): call_user_func(Array, 'password', NULL, Object(yii\validators\InlineValidator))
+#9 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/validators/Validator.php(257): yii\validators\InlineValidator->validateAttribute(Object(rbac\models\form\Login), 'password')
+#10 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Model.php(367): yii\validators\Validator->validateAttributes(Object(rbac\models\form\Login), Array)
+#11 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(59): yii\base\Model->validate()
+#12 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/controllers/UserController.php(161): rbac\models\form\Login->login()
+#13 [internal function]: rbac\controllers\UserController->actionLogin()
+#14 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('login', Array)
+#17 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('rbac/user/login', Array)
+#18 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#20 {main}
+2019-10-14 03:54:43 [127.0.0.1][-][tncajdm6lf2lsr6bbfh52gvd53][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'fQ9zOdxQYUvA5QNjVQes97IHiUaC5fwMuda06Y-Y8YgEayd_6yAzIPmteyQgZdiz_U_sMOGDhELO4tKR_qm13w=='
+    'Login' => [
+        'username' => 'demo'
+        'password' => '123456'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'tncajdm6lf2lsr6bbfh52gvd53'
+    '_csrf-backend' => '9ba25391df2163733e98214e63a603e15bbfea805170ae688a07634ef3b92d75a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ydTF7pRk9HxGubtDOHevcfxNw4fxq1DW\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://backend.test.com/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '220'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://backend.test.com'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/user/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=tncajdm6lf2lsr6bbfh52gvd53; _csrf-backend=9ba25391df2163733e98214e63a603e15bbfea805170ae688a07634ef3b92d75a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ydTF7pRk9HxGubtDOHevcfxNw4fxq1DW%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '39846'
+    'REDIRECT_URL' => '/rbac/user/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/user/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571025283.429
+    'REQUEST_TIME' => 1571025283
+]
+2019-10-14 03:54:51 [127.0.0.1][-][tncajdm6lf2lsr6bbfh52gvd53][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: {{%admin}}' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php:438
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#4 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/User.php(109): yii\db\BaseActiveRecord::findOne(Array)
+#5 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(74): rbac\models\User::findByUsername('demo')
+#6 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(45): rbac\models\form\Login->getUser()
+#7 [internal function]: rbac\models\form\Login->validatePassword('password', NULL, Object(yii\validators\InlineValidator))
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/validators/InlineValidator.php(72): call_user_func(Array, 'password', NULL, Object(yii\validators\InlineValidator))
+#9 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/validators/Validator.php(257): yii\validators\InlineValidator->validateAttribute(Object(rbac\models\form\Login), 'password')
+#10 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Model.php(367): yii\validators\Validator->validateAttributes(Object(rbac\models\form\Login), Array)
+#11 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(59): yii\base\Model->validate()
+#12 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/controllers/UserController.php(161): rbac\models\form\Login->login()
+#13 [internal function]: rbac\controllers\UserController->actionLogin()
+#14 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('login', Array)
+#17 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('rbac/user/login', Array)
+#18 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#20 {main}
+2019-10-14 03:54:51 [127.0.0.1][-][tncajdm6lf2lsr6bbfh52gvd53][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'fQ9zOdxQYUvA5QNjVQes97IHiUaC5fwMuda06Y-Y8YgEayd_6yAzIPmteyQgZdiz_U_sMOGDhELO4tKR_qm13w=='
+    'Login' => [
+        'username' => 'demo'
+        'password' => '123456'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'tncajdm6lf2lsr6bbfh52gvd53'
+    '_csrf-backend' => '9ba25391df2163733e98214e63a603e15bbfea805170ae688a07634ef3b92d75a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ydTF7pRk9HxGubtDOHevcfxNw4fxq1DW\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://backend.test.com/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '220'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://backend.test.com'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/user/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=tncajdm6lf2lsr6bbfh52gvd53; _csrf-backend=9ba25391df2163733e98214e63a603e15bbfea805170ae688a07634ef3b92d75a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ydTF7pRk9HxGubtDOHevcfxNw4fxq1DW%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '39850'
+    'REDIRECT_URL' => '/rbac/user/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/user/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571025291.913
+    'REQUEST_TIME' => 1571025291
+]
+2019-10-14 05:03:00 [127.0.0.1][-][tncajdm6lf2lsr6bbfh52gvd53][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: {{%admin}}' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php:438
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(262): yii\db\ActiveRecord::getTableSchema()
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(234): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#4 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/User.php(109): yii\db\BaseActiveRecord::findOne(Array)
+#5 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(74): rbac\models\User::findByUsername('demo')
+#6 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(45): rbac\models\form\Login->getUser()
+#7 [internal function]: rbac\models\form\Login->validatePassword('password', NULL, Object(yii\validators\InlineValidator))
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/validators/InlineValidator.php(72): call_user_func(Array, 'password', NULL, Object(yii\validators\InlineValidator))
+#9 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/validators/Validator.php(257): yii\validators\InlineValidator->validateAttribute(Object(rbac\models\form\Login), 'password')
+#10 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Model.php(367): yii\validators\Validator->validateAttributes(Object(rbac\models\form\Login), Array)
+#11 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/form/Login.php(59): yii\base\Model->validate()
+#12 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/controllers/UserController.php(161): rbac\models\form\Login->login()
+#13 [internal function]: rbac\controllers\UserController->actionLogin()
+#14 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('login', Array)
+#17 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('rbac/user/login', Array)
+#18 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#20 {main}
+2019-10-14 05:02:59 [127.0.0.1][-][tncajdm6lf2lsr6bbfh52gvd53][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'fQ9zOdxQYUvA5QNjVQes97IHiUaC5fwMuda06Y-Y8YgEayd_6yAzIPmteyQgZdiz_U_sMOGDhELO4tKR_qm13w=='
+    'Login' => [
+        'username' => 'demo'
+        'password' => '123456'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'tncajdm6lf2lsr6bbfh52gvd53'
+    '_csrf-backend' => '9ba25391df2163733e98214e63a603e15bbfea805170ae688a07634ef3b92d75a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ydTF7pRk9HxGubtDOHevcfxNw4fxq1DW\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '220'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://backend.test.com'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/user/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=tncajdm6lf2lsr6bbfh52gvd53; _csrf-backend=9ba25391df2163733e98214e63a603e15bbfea805170ae688a07634ef3b92d75a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ydTF7pRk9HxGubtDOHevcfxNw4fxq1DW%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '40244'
+    'REDIRECT_URL' => '/rbac/user/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/user/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571029379.997
+    'REQUEST_TIME' => 1571029379
+]
+2019-10-14 05:08:04 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'backend.t_admin_log.created_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php:1290
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php(1290): PDOStatement->execute()
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php(1158): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('<span class="st...')
+#3 /home/netcec/wwwroot/yii2backend/backend/controllers/SiteController.php(75): yii\db\Command->query()
+#4 [internal function]: backend\controllers\SiteController->actionIndex()
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[]')
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[]')
+#9 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'backend.t_admin_log.created_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+					ip,
+					FROM_UNIXTIME(created_at, "%Y-%m-%d"),
+					COUNT(*) as num
+				FROM
+					t_admin_log
+				WHERE
+					FROM_UNIXTIME(created_at, "%Y-%m-%d") = date_format(NOW(), "%Y-%m-%d")
+				GROUP BY
+					ip' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Schema.php:674
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n\t\t\t\t\tip,...')
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php(1158): yii\db\Command->internalExecute('<span class="st...')
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('<span class="st...')
+#3 /home/netcec/wwwroot/yii2backend/backend/controllers/SiteController.php(75): yii\db\Command->query()
+#4 [internal function]: backend\controllers\SiteController->actionIndex()
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array('[<span class="t...', '[]')
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams('[]')
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<span class="st...', '[]')
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('<span class="st...', '[]')
+#9 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'backend.t_admin_log.created_at' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2019-10-14 05:08:04 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'nnk67lsr0le9r0g3e3eeg4qdf0'
+    '_identity-backend' => '5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt\",2592000]\";}'
+    '_csrf-backend' => 'a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/user/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=nnk67lsr0le9r0g3e3eeg4qdf0; _identity-backend=5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt%22%2C2592000%5D%22%3B%7D; _csrf-backend=a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '40552'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571029684.553
+    'REQUEST_TIME' => 1571029684
+]
+2019-10-14 05:08:04 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][error][yii\web\HttpException:403] exception 'yii\web\ForbiddenHttpException' with message '您没有执行此操作的权限。' in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/components/AccessControl.php:88
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/components/AccessControl.php(73): rbac\components\AccessControl->denyAccess(Object(yii\web\User))
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/ActionFilter.php(77): rbac\components\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(700): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(145): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('toolbar', Array)
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('debug/default/t...', Array)
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+2019-10-14 05:08:04 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][info][application] $_GET = [
+    'tag' => '5da402b48fa5b'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'nnk67lsr0le9r0g3e3eeg4qdf0'
+    '_identity-backend' => '5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt\",2592000]\";}'
+    '_csrf-backend' => 'a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test.com/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=nnk67lsr0le9r0g3e3eeg4qdf0; _identity-backend=5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt%22%2C2592000%5D%22%3B%7D; _csrf-backend=a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '40554'
+    'REDIRECT_URL' => '/debug/default/toolbar'
+    'REDIRECT_QUERY_STRING' => 'tag=5da402b48fa5b'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'tag=5da402b48fa5b'
+    'REQUEST_URI' => '/debug/default/toolbar?tag=5da402b48fa5b'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571029684.649
+    'REQUEST_TIME' => 1571029684
+]
+2019-10-14 05:14:03 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][error][yii\web\HttpException:403] exception 'yii\web\ForbiddenHttpException' with message '您没有执行此操作的权限。' in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/components/AccessControl.php:88
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/components/AccessControl.php(73): rbac\components\AccessControl->denyAccess(Object(yii\web\User))
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/ActionFilter.php(77): rbac\components\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(700): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(145): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('toolbar', Array)
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('debug/default/t...', Array)
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+2019-10-14 05:14:03 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][info][application] $_GET = [
+    'tag' => '5da4041b7a119'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'nnk67lsr0le9r0g3e3eeg4qdf0'
+    '_identity-backend' => '5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt\",2592000]\";}'
+    '_csrf-backend' => 'a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test.com/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=nnk67lsr0le9r0g3e3eeg4qdf0; _identity-backend=5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt%22%2C2592000%5D%22%3B%7D; _csrf-backend=a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '40682'
+    'REDIRECT_URL' => '/debug/default/toolbar'
+    'REDIRECT_QUERY_STRING' => 'tag=5da4041b7a119'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'tag=5da4041b7a119'
+    'REQUEST_URI' => '/debug/default/toolbar?tag=5da4041b7a119'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571030043.715
+    'REQUEST_TIME' => 1571030043
+]
+2019-10-14 05:22:54 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][error][yii\web\HttpException:403] exception 'yii\web\ForbiddenHttpException' with message '您没有执行此操作的权限。' in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/components/AccessControl.php:88
+Stack trace:
+#0 /home/netcec/wwwroot/yii2backend/backend/modules/rbac/components/AccessControl.php(73): rbac\components\AccessControl->denyAccess(Object(yii\web\User))
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/ActionFilter.php(77): rbac\components\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(700): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(145): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('toolbar', Array)
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('debug/default/t...', Array)
+#8 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#10 {main}
+2019-10-14 05:22:54 [127.0.0.1][2][nnk67lsr0le9r0g3e3eeg4qdf0][info][application] $_GET = [
+    'tag' => '5da4062e791a2'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'nnk67lsr0le9r0g3e3eeg4qdf0'
+    '_identity-backend' => '5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt\",2592000]\";}'
+    '_csrf-backend' => 'a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 2
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_REFERER' => 'http://backend.test.com/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => 'advanced-backend=nnk67lsr0le9r0g3e3eeg4qdf0; _identity-backend=5e1494160ac656b8f1ad1bbc1e08fc9ed23af002e9e81557d78bfa0f0d28a624a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22MGILqfoQyFko0kLvlaOxvNRp8LgZA0Qt%22%2C2592000%5D%22%3B%7D; _csrf-backend=a8c09fa1fffbea1a85d909d81319e2daede12a1daaab8df3e6d9268a7add5f7fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22kqiCyEaLOgpcaZjri8emmEwAfTZJwmNt%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '40786'
+    'REDIRECT_URL' => '/debug/default/toolbar'
+    'REDIRECT_QUERY_STRING' => 'tag=5da4062e791a2'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'tag=5da4062e791a2'
+    'REQUEST_URI' => '/debug/default/toolbar?tag=5da4062e791a2'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571030574.637
+    'REQUEST_TIME' => 1571030574
+]
+2019-10-17 00:55:42 [127.0.0.1][1][9nsu9bhui6c5pql2gq0n8fatl6][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'rbac\models\BaseObject' not found' in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/Assignment.php:17
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2019-10-17 00:55:42 [127.0.0.1][1][9nsu9bhui6c5pql2gq0n8fatl6][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    'advanced-backend' => '9nsu9bhui6c5pql2gq0n8fatl6'
+    '_csrf-backend' => '6d0cb12b977562954dd891f35d1aed158ba236d23e609fee5bf6b33cfe9cfa9fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"tj0DrEYtMnF9W9c2tK_I_ng5OBb1w9YB\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.80 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/assignment/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_identity-backend=836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; advanced-backend=9nsu9bhui6c5pql2gq0n8fatl6; _csrf-backend=6d0cb12b977562954dd891f35d1aed158ba236d23e609fee5bf6b33cfe9cfa9fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22tj0DrEYtMnF9W9c2tK_I_ng5OBb1w9YB%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '57646'
+    'REDIRECT_URL' => '/rbac/assignment/view'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/rbac/assignment/view?id=1'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1571273742.349
+    'REQUEST_TIME' => 1571273742
+]
+2019-11-12 06:08:50 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'rbac\models\BaseObject' not found' in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/Assignment.php:17
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2019-11-12 06:08:50 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][info][application] $_GET = [
+    'id' => '2'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    'advanced-backend' => 'oflcdanrckip3e96diaohfc075'
+    '_csrf-backend' => '4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"fMhPhJAVInUBc9lCkzMDenOP01alMmhw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/assignment/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_identity-backend=836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; advanced-backend=oflcdanrckip3e96diaohfc075; _csrf-backend=4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22fMhPhJAVInUBc9lCkzMDenOP01alMmhw%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '59870'
+    'REDIRECT_URL' => '/rbac/assignment/view'
+    'REDIRECT_QUERY_STRING' => 'id=2'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=2'
+    'REQUEST_URI' => '/rbac/assignment/view?id=2'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573538930.168
+    'REQUEST_TIME' => 1573538930
+]
+2019-11-12 06:09:40 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][error][yii\web\HttpException:405] exception 'yii\web\MethodNotAllowedHttpException' with message 'Method Not Allowed. This URL can only handle the following request methods: POST.' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/filters/VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(276): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('assign', Array)
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('rbac/route/assi...', Array)
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#9 {main}
+2019-11-12 06:09:40 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    'advanced-backend' => 'oflcdanrckip3e96diaohfc075'
+    '_csrf-backend' => '4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"fMhPhJAVInUBc9lCkzMDenOP01alMmhw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/log/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_identity-backend=836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; advanced-backend=oflcdanrckip3e96diaohfc075; _csrf-backend=4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22fMhPhJAVInUBc9lCkzMDenOP01alMmhw%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '60280'
+    'REDIRECT_URL' => '/rbac/route/assign'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/route/assign'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573538980.075
+    'REQUEST_TIME' => 1573538980
+]
+2019-11-12 06:09:40 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][error][yii\web\HttpException:405] exception 'yii\web\MethodNotAllowedHttpException' with message 'Method Not Allowed. This URL can only handle the following request methods: POST.' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/filters/VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(276): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('remove', Array)
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('rbac/route/remo...', Array)
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#9 {main}
+2019-11-12 06:09:39 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    'advanced-backend' => 'oflcdanrckip3e96diaohfc075'
+    '_csrf-backend' => '4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"fMhPhJAVInUBc9lCkzMDenOP01alMmhw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/log/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_identity-backend=836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; advanced-backend=oflcdanrckip3e96diaohfc075; _csrf-backend=4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22fMhPhJAVInUBc9lCkzMDenOP01alMmhw%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '60282'
+    'REDIRECT_URL' => '/rbac/route/remove'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/route/remove'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573538979.84
+    'REQUEST_TIME' => 1573538979
+]
+2019-11-12 06:09:40 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][error][yii\web\HttpException:405] exception 'yii\web\MethodNotAllowedHttpException' with message 'Method Not Allowed. This URL can only handle the following request methods: POST.' in /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/filters/VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(276): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('refresh', Array)
+#6 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('rbac/route/refr...', Array)
+#7 /home/netcec/wwwroot/yii2backend/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /home/netcec/wwwroot/yii2backend/backend/web/index.php(17): yii\base\Application->run()
+#9 {main}
+2019-11-12 06:09:40 [127.0.0.1][1][oflcdanrckip3e96diaohfc075][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    'advanced-backend' => 'oflcdanrckip3e96diaohfc075'
+    '_csrf-backend' => '4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"fMhPhJAVInUBc9lCkzMDenOP01alMmhw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/log/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_identity-backend=836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; advanced-backend=oflcdanrckip3e96diaohfc075; _csrf-backend=4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22fMhPhJAVInUBc9lCkzMDenOP01alMmhw%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '60278'
+    'REDIRECT_URL' => '/rbac/route/refresh'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/route/refresh'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573538980.104
+    'REQUEST_TIME' => 1573538980
+]
+2019-11-12 06:18:08 [127.0.0.1][1][-][error][rbac\models\Route::addNew] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '/rbac/menu/add' for key 'PRIMARY'
+The SQL being executed was: INSERT INTO `t_auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES ('/rbac/menu/add', 2, NULL, NULL, NULL, 1573539488, 1573539488)
+    in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/models/Route.php:59
+    in /home/netcec/wwwroot/yii2backend/backend/modules/rbac/controllers/RouteController.php:53
+2019-11-12 06:18:08 [127.0.0.1][1][-][info][application] $_GET = []
+
+$_POST = [
+    'route' => '/rbac/menu/add'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6\",2592000]\";}'
+    'advanced-backend' => 'oflcdanrckip3e96diaohfc075'
+    '_csrf-backend' => '4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"fMhPhJAVInUBc9lCkzMDenOP01alMmhw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'backend.test.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '26'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'CvzVAs8-FJDkFLMgKlQZsBY57S57ewPqQZs68Cho1vFssb1Sp3RVxq165mJJbXXzfUOgah4VTLpxqlucZQW-hg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://backend.test.com'
+    'HTTP_REFERER' => 'http://backend.test.com/rbac/route/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.9'
+    'HTTP_COOKIE' => '_identity-backend=836b783da7b810783d672ff46eb0c7b92209df747648eee5b98adadc5dc197d2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22FoFuK-WrcOayDI0_kLdRwGavKN-6mXs6%22%2C2592000%5D%22%3B%7D; advanced-backend=oflcdanrckip3e96diaohfc075; _csrf-backend=4e4666965fcec39e97a807d2ac93693e784f70675694e1d320b73c272c6f3d12a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22fMhPhJAVInUBc9lCkzMDenOP01alMmhw%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Ubuntu) Server at backend.test.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Ubuntu)'
+    'SERVER_NAME' => 'backend.test.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/netcec/wwwroot/yii2backend/backend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/home/netcec/wwwroot/yii2backend/backend/web/index.php'
+    'REMOTE_PORT' => '36244'
+    'REDIRECT_URL' => '/rbac/route/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/rbac/route/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573539488.104
+    'REQUEST_TIME' => 1573539488
+]
